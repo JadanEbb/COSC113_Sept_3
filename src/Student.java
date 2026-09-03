@@ -1,26 +1,52 @@
 public class Student {
 
-    String FN;
-    String LN;
+    private static int Sid;
+    static String FN;
+    static String LN;
     Integer SID;
 
     // How many parameters? () - 0
     Student() {
-        this.FN = "No First Name";
-        this.LN = "No Last Name";
+        FN = "No First Name";
+        LN = "No Last Name";
         this.SID = 0;
 
     }
+//        Student(String FN, String LN) {
+//        Student.FN = FN;
+//        Student.LN = LN;
+//        }
+
+    Student(String FN, String LN) {
+        Student.FN = FN;
+        Student.LN = LN;
+    }
+
 
     //How many parameters? () - 3
     Student(String FN, String LN, Integer SID) {
-        this.FN = FN;
-        this.LN = LN;
+        Student.FN = FN;
+        Student.LN = LN;
         this.SID = SID;
     }
 
+    Student(String FN, int SID, String LN) {
+        Student.FN = FN;
+        Student.LN = LN;
+        this.SID = SID;
+    }
+
+    // You can create overloaded constuctors by varying 1) The parameter number, 2 order
     public static void main(String[] args) {
-    //Variable s1 is of student type
+
+        Student s4 = new Student( "Joe", "Dirt");
+        System.out.println(s4.FN);
+        System.out.println(s4.LN);
+        System.out.println(s4.SID);
+        System.out.println("------------------------");
+
+
+        //Variable s1 is of student type
         Student s1;
         s1 = new Student("FN", "LN", 1);
         System.out.println(s1);
@@ -36,15 +62,10 @@ public class Student {
     System.out.println(s3.FN);
     System.out.println(s3.LN);
 
+    Student s5;
+    s5 = new Student(FN, Sid, LN);
 
-
-
-
-    //Student success center 180? tue thur 3-5pm
+        //Student success center 180? tue thur 3-5pm
 // Argument is the value
     }
-
-
-
-
 }
