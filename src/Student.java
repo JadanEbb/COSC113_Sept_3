@@ -26,10 +26,21 @@ public class Student {
         System.out.println(s1);
         System.out.println(s1.FN);
 
+    Student s2;
+    s2 = new Student("Tobiloba", "Ayodeji", 14141);
+    System.out.println(s2.FN);
+    System.out.println(s2.LN);
+
+    Student s3;
+    s3 = new Student("Miguel", "Gascaortaga", 31415);
+    System.out.println(s3.FN);
+    System.out.println(s3.LN);
 
 
 
 
+
+    //Student success center 180? tue thur 3-5pm
 // Argument is the value
     }
 
