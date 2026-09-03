@@ -37,6 +37,33 @@ public class Student {
 
     }
 
+    //Methods = Getters and Setters
+
+
+    public static String getFN() {
+        return FN;
+    }
+
+    public static void setFN(String FN) {
+        Student.FN = FN;
+    }
+
+    public static String getLN() {
+        return LN;
+    }
+
+    public static void setLN(String LN) {
+        Student.LN = LN;
+    }
+
+    public Integer getSID() {
+        return SID;
+    }
+
+    public void setSID(Integer SID) {
+        this.SID = SID;
+    }
+
     // You can create overloaded constuctors by varying 1) The parameter number, 2 order
     static void main(String[] args) {
 
