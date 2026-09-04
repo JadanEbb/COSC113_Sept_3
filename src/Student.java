@@ -1,3 +1,5 @@
+//https://github.com/JadanEbb/COSC113_Sept_3.git
+
 public class Student {
 
     private static int Sid;
@@ -56,6 +58,10 @@ public class Student {
         Student.LN = LN;
     }
 
+    public static void setSid(int sid) {
+        Sid = sid;
+    }
+
     public Integer getSID() {
         return SID;
     }
@@ -67,9 +73,14 @@ public class Student {
     // You can create overloaded constuctors by varying 1) The parameter number, 2 order
     static void main(String[] args) {
 
+        Student s6 = new Student();
+        //Setting names
+        s6.FN = "Joe";
+        s6.setLN("MAMA!");
+        s6.LN = "";
         Student s4 = new Student( "Joe", "Dirt");
-        System.out.println(FN);
-        System.out.println(LN);
+        System.out.println(s4.FN);
+        System.out.println(s4.LN);
         System.out.println(s4.SID);
         System.out.println("------------------------");
 
