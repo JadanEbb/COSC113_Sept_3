@@ -2,27 +2,27 @@
 
 public class Student {
 
-    // 1. Three attributes (non-static so each object retains its own values)
+    // 1. Three attributes
     private String firstName;
     private String lastName;
     private int studentId;
 
-    // 2. Constructor 1: Default constructor (chains to Constructor 4)
+    // 2. Constructor 1: Default constructor
     public Student() {
         this("No First Name", "No Last Name", 0);
     }
 
-    // 2. Constructor 2: Overloaded (chains to Constructor 4)
+    // 2. Constructor 2: Overloaded
     public Student(String firstName) {
         this(firstName, "No Last Name", 0);
     }
 
-    // 2. Constructor 3: Overloaded (chains to Constructor 4)
+    // 2. Constructor 3: Overloaded
     public Student(String firstName, String lastName) {
         this(firstName, lastName, 0);
     }
 
-    // 2. Constructor 4: Overloaded (primary constructor)
+    // 2. primary constructor
     public Student(String firstName, String lastName, int studentId) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -54,7 +54,6 @@ public class Student {
         this.studentId = studentId;
     }
 
-    // 4 & 5. Main method testing object creation, constructors, getters, setters, and dot operator
     public static void main(String[] args) {
         // Create objects using different constructors
         Student s1 = new Student();
@@ -62,12 +61,12 @@ public class Student {
         Student s3 = new Student("Joe", "Dirt", 67);
         Student s4 = new Student("Tobiloba", "Ayodeji", 14141);
 
-        // Using setters via dot operator
+        // Using setters
         s1.setFirstName("Miguel");
         s1.setLastName("Gascaortaga");
         s1.setStudentId(31415);
 
-        // Using getters via dot operator
+        // Using getters
         System.out.println("Student 1: " + s1.getFirstName() + " " + s1.getLastName() + " (ID: " + s1.getStudentId() + ")");
         System.out.println("Student 2: " + s2.getFirstName() + " " + s2.getLastName() + " (ID: " + s2.getStudentId() + ")");
         System.out.println("Student 3: " + s3.getFirstName() + " " + s3.getLastName() + " (ID: " + s3.getStudentId() + ")");
