@@ -2,113 +2,75 @@
 
 public class Student {
 
-    private static int Sid;
-    static String FN;
-    static String LN;
-    Integer SID;
+    // 1. Three attributes (non-static so each object retains its own values)
+    private String firstName;
+    private String lastName;
+    private int studentId;
 
-    // How many parameters? () - 0
-    Student() {
-        FN = "No First Name";
-        LN = "No Last Name";
-        this.SID = 0;
-
-    }
-//        Student(String FN, String LN) {
-//        Student.FN = FN;
-//        Student.LN = LN;
-//        }
-
-    Student(String FN, String LN) {
-        Student.FN = FN;
-        Student.LN = LN;
+    // 2. Constructor 1: Default constructor (chains to Constructor 4)
+    public Student() {
+        this("No First Name", "No Last Name", 0);
     }
 
-    //How many parameters? () - 3
-    Student(String FN, String LN, Integer SID) {
-//        Student.FN = FN;
-//        Student.LN = LN;
-        this(FN,LN);
-        this.SID = SID;
+    // 2. Constructor 2: Overloaded (chains to Constructor 4)
+    public Student(String firstName) {
+        this(firstName, "No Last Name", 0);
     }
 
-    Student(String FN, int SID, String LN) {
-        Student.FN = FN;
-        Student.LN = LN;
-        this.SID = SID;
-
+    // 2. Constructor 3: Overloaded (chains to Constructor 4)
+    public Student(String firstName, String lastName) {
+        this(firstName, lastName, 0);
     }
 
-    //Methods = Getters and Setters
-
-
-    public static String getFN() {
-        return FN;
+    // 2. Constructor 4: Overloaded (primary constructor)
+    public Student(String firstName, String lastName, int studentId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.studentId = studentId;
     }
 
-    public static void setFN(String FN) {
-        Student.FN = FN;
+    // 3. Getter and Setter Methods
+    public String getFirstName() {
+        return firstName;
     }
 
-    public static String getLN() {
-        return LN;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public static void setLN(String LN) {
-        Student.LN = LN;
+    public String getLastName() {
+        return lastName;
     }
 
-    public static void setSid(int sid) {
-        Sid = sid;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Integer getSID() {
-        return SID;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setSID(Integer SID) {
-        this.SID = SID;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
-    // You can create overloaded constuctors by varying 1) The parameter number, 2 order
-    static void main(String[] args) {
+    // 4 & 5. Main method testing object creation, constructors, getters, setters, and dot operator
+    public static void main(String[] args) {
+        // Create objects using different constructors
+        Student s1 = new Student();
+        Student s2 = new Student("James", "Henry", 12);
+        Student s3 = new Student("Joe", "Dirt", 67);
+        Student s4 = new Student("Tobiloba", "Ayodeji", 14141);
 
-        Student s6 = new Student();
-        //Setting names
-        s6.FN = "Joe";
-        s6.setLN("MAMA!");
-        s6.LN = "";
-        Student s4 = new Student( "Joe", "Dirt");
-        System.out.println(s4.FN);
-        System.out.println(s4.LN);
-        System.out.println(s4.SID);
-        System.out.println("------------------------");
+        // Using setters via dot operator
+        s1.setFirstName("Miguel");
+        s1.setLastName("Gascaortaga");
+        s1.setStudentId(31415);
 
-
-        //Variable s1 is of student type
-        Student s1;
-        s1 = new Student("FN", "LN", 1);
-        System.out.println(s1);
-        System.out.println(FN);
-
-    Student s2;
-    s2 = new Student("Tobiloba", "Ayodeji", 14141);
-    System.out.println(FN);
-    System.out.println(LN);
-
-    Student s3;
-    s3 = new Student("Miguel", "Gascaortaga", 31415);
-    System.out.println(FN);
-    System.out.println(LN);
-
-    Student s5;
-    s5 = new Student(FN, Sid, LN);
-    System.out.println(FN);
-    System.out.println(LN);
-
-
-
-        //Student success center 180? tue thur 3-5pm
-// Argument is the value
+        // Using getters via dot operator
+        System.out.println("Student 1: " + s1.getFirstName() + " " + s1.getLastName() + " (ID: " + s1.getStudentId() + ")");
+        System.out.println("Student 2: " + s2.getFirstName() + " " + s2.getLastName() + " (ID: " + s2.getStudentId() + ")");
+        System.out.println("Student 3: " + s3.getFirstName() + " " + s3.getLastName() + " (ID: " + s3.getStudentId() + ")");
+        System.out.println("Student 4: " + s4.getFirstName() + " " + s4.getLastName() + " (ID: " + s4.getStudentId() + ")");
     }
 }
